@@ -28,6 +28,14 @@ class pardusfinance:
         self.window = self.builder.get_object("mainwindow")  # home window
         self.window.set_decorated(False)  # remove window decoration
 
+
+        # transparency window
+        screen = self.window.get_screen()
+        visual = screen.get_rgba_visual()
+        if visual and screen.is_composited():
+            self.window.set_visual(visual)
+
+
         self.cssload()  # CSS desing
 
         self.window.set_keep_above(True)  # always keep it on top
@@ -42,7 +50,7 @@ class pardusfinance:
     def cssload(self):
         css = b"""
 
-        window { background-color: rgba(10, 10, 10, 10); border-radius: 15px; }
+        window { background-color: rgba(80, 83, 84, 0.5); border-radius: 20px; }
 
         """
         provider = Gtk.CssProvider()
