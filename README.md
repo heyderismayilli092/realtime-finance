@@ -1,5 +1,6 @@
 # pardus-finance
 A simple application that displays currency and gold exchange rate changes on the Pardus desktop screen
+This application obtains exchange rate data via the "https://api.genelpara.com/" service
 
 
 Clone the repository
