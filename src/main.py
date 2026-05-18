@@ -25,7 +25,11 @@ class pardusfinance:
 
         # widget referances
         self.window = self.builder.get_object("mainwindow")  # home window
-        self.close_button = self.builder.get_object("closebutton")  # close button
+        self.close_button = self.builder.get_object("closebtn")  # close button
+        self.close_button.set_name("closebtn")  # for CSS
+        self.about_button = self.builder.get_object("aboutbtn")  # about button
+        self.about_button.set_name("aboutbtn")  # for CSS
+
         self.usdalis = self.builder.get_object("usd_alis")  # usd_alis label
         self.usdsatis = self.builder.get_object("usd_satis")  # usd_satis label
         self.usddegisim = self.builder.get_object("usd_degisim")  # usd_degisim label
@@ -74,15 +78,21 @@ class pardusfinance:
     # CSS theme
     def cssload(self):
         css = b"""
-        window { background-color: rgba(80, 83, 84, 0.4); border-radius: 20px; color: #fff; }
-        button {
+
+        window { background-color: rgba(80, 83, 100, 0.7); border-radius: 20px; color: #fff; }
+        #closebtn {
             background-image: none;
             background-color: #d64a4a;
             color: #fff;
             border-radius: 10px;
+            opacity: 0.5;
         }
-        button:hover {
+        #closebtn:hover {
           background-color: #560000;
+        }
+
+        #aboutbtn {
+            opacity: 0.5;
         }
         """
         provider = Gtk.CssProvider()
