@@ -10,6 +10,7 @@ import socket
 import subprocess
 import locale
 from locale import gettext as _
+import kur_api  # the code that retrieves currency data is being imported
 
 locale.bindtextdomain('pardus-finance', '/usr/share/locale')
 locale.textdomain('pardus-finance')
@@ -24,8 +25,29 @@ class pardusfinance:
 
         # widget referances
         self.window = self.builder.get_object("mainwindow")  # home window
-        self.update_time_label = self.builder.get_object("update_time")
         self.close_button = self.builder.get_object("closebutton")  # close button
+        self.usdalis = self.builder.get_object("usd_alis")  # usd_alis label
+        self.usdsatis = self.builder.get_object("usd_satis")  # usd_satis label
+        self.usddegisim = self.builder.get_object("usd_degisim")  # usd_degisim label
+
+        self.euroalis = self.builder.get_object("euro_alis")  # euro_alis label
+        self.eurosatis = self.builder.get_object("euro_satis")  # euro_satis label
+        self.eurodegisim = self.builder.get_object("euro_degisim")  # euro_degisim label
+
+        self.caalis = self.builder.get_object("ca_alis")  # ca_alis label
+        self.casatis = self.builder.get_object("ca_satis")  # ca_satis label
+        self.cadegisim = self.builder.get_object("ca_degisim")  # ca_degisim label
+
+        self.gaalis = self.builder.get_object("ga_alis")  # ga_alis label
+        self.gasatis = self.builder.get_object("ga_satis")  # ga_satis label
+        self.gadegisim = self.builder.get_object("ga_degisim")  # ga_degisim label
+
+        # Stack özellikleri (isteğe göre Glade'de de ayarlanabilir)
+        self.stack = self.builder.get_object("main_stack")
+        self.stack.set_transition_type(Gtk.StackTransitionType.SLIDE_LEFT)
+        self.stack.set_transition_duration(1000)  # ms
+        # Stack çocuk isimlerini sırada tut
+        self.pages = ["page0", "page1", "page2", "page3"]
 
         # transparency window
         self.window.set_decorated(False)  # remove window decoration
@@ -39,8 +61,9 @@ class pardusfinance:
         self.window.connect("realize", self.on_realize)  # when realized, the Gdk.Window file belonging to the window will be ready
         self.window.connect("destroy", self._quit)
         self.close_button.connect("clicked", self._quit)
-        self.count = 0
-        GLib.timeout_add_seconds(2, self._tick)  # '_tick' fonksiyonu her defasında 3 saniyeden bir çalışır
+
+        self.current = 0
+        GLib.timeout_add_seconds(5, self.boxchange)  # 'boxchange' fonksiyonu her defasında 5 saniyeden bir çalışır
         self.window.show_all()
         self.cssload()  # CSS desing
 
@@ -81,10 +104,23 @@ class pardusfinance:
         y = geom.y + geom.height - height - 10
         win.move(x, y)
 
-    # finance API function
-    def _tick(self):
-        self.count += 1
-        self.update_time_label.set_text(str(self.count))
+
+    def refresh_data(self):
+        kurdata = kur_api.kur()
+
+
+
+    # data box change
+    def boxchange(self):
+        # next index
+        self.current = (self.current + 1) % len(self.pages)
+        name = self.pages[self.current]
+        # change the visible box
+        self.stack.set_visible_child_name(name)
+
+        if page_index >= len(pages):
+            page_index = 0
+            refresh_data()  # the API is called again
         return True
 
     # quit
