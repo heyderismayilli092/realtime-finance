@@ -193,7 +193,7 @@ class pardusfinance:
         Gtk.main_quit()
 
 
-if __name__ == "__main__":
-    app = pardusfinance()
-    Gtk.main()
+
+app = pardusfinance()
+Gtk.main()
 

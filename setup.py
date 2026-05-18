@@ -42,9 +42,9 @@ data_files = [
     ("/usr/share/pardus/pardus-finance/ui",
      ["ui/MainWindow.glade"]),
 
-    ("/usr/share/pardus/pardus-finance/src",
-     ["src/main.py",
-      "src/kur_api.py"]),
+    ("/usr/share/pardus/pardus-finance/src", ["src/main.py"]),
+
+    ("/usr/lib/python3/dist-packages/", ["src/kur_api.py"]),
 
     ("/usr/share/icons/hicolor/scalable/apps/",
      ["pardus-finance.png"])
