@@ -25,6 +25,8 @@ class pardusfinance:
 
         # widget referances
         self.window = self.builder.get_object("mainwindow")  # home window
+        self.about_dialog = self.builder.get_object("about_dialog")  # about screen
+
         self.close_button = self.builder.get_object("closebtn")  # close button
         self.close_button.set_name("closebtn")  # for CSS
         self.about_button = self.builder.get_object("aboutbtn")  # about button
@@ -66,6 +68,7 @@ class pardusfinance:
         self.window.connect("realize", self.on_realize)  # when realized, the Gdk.Window file belonging to the window will be ready
         self.window.connect("destroy", self._quit)
         self.close_button.connect("clicked", self._quit)
+        self.about_button.connect("clicked", self._on_aboutdialog)
 
         self.current = 0
         self.refresh_data()  # the exchange rate data should be obtained when the program first starts
@@ -177,6 +180,13 @@ class pardusfinance:
 
         self.page_index += 1
         return True
+
+
+    # about dialog
+    def _on_aboutdialog(self, widget):
+        self.about_dialog.run()
+        self.about_dialog.hide()
+
 
     # quit
     def _quit(self, widget):
