@@ -42,12 +42,13 @@ class pardusfinance:
         self.gasatis = self.builder.get_object("ga_satis")  # ga_satis label
         self.gadegisim = self.builder.get_object("ga_degisim")  # ga_degisim label
 
-        # Stack özellikleri (isteğe göre Glade'de de ayarlanabilir)
+        # stack properties
         self.stack = self.builder.get_object("main_stack")
         self.stack.set_transition_type(Gtk.StackTransitionType.SLIDE_LEFT)
         self.stack.set_transition_duration(1000)  # ms
-        # Stack çocuk isimlerini sırada tut
-        self.pages = ["page0", "page1", "page2", "page3"]
+
+        self.page_index = 0
+        self.pages = ["page0", "page1", "page2", "page3"]  # pages displaying exchange rate data
 
         # transparency window
         self.window.set_decorated(False)  # remove window decoration
@@ -63,6 +64,8 @@ class pardusfinance:
         self.close_button.connect("clicked", self._quit)
 
         self.current = 0
+        self.refresh_data()  # the exchange rate data should be obtained when the program first starts
+
         GLib.timeout_add_seconds(5, self.boxchange)  # 'boxchange' fonksiyonu her defasında 5 saniyeden bir çalışır
         self.window.show_all()
         self.cssload()  # CSS desing
@@ -105,22 +108,40 @@ class pardusfinance:
         win.move(x, y)
 
 
+    # new market data is retrieved and printed to the appropriate objects
     def refresh_data(self):
         kurdata = kur_api.kur()
 
+        self.usdalis.set_label(kurdata['usd']['alis'])
+        self.usdsatis.set_label(kurdata['usd']['satis'])
+        self.usddegisim.set_label(kurdata['usd']['degisim'])
+
+        self.euroalis.set_label(kurdata['eur']['alis'])
+        self.eurosatis.set_label(kurdata['eur']['satis'])
+        self.eurodegisim.set_label(kurdata['eur']['degisim'])
+
+        self.gaalis.set_label(kurdata['ga']['alis'])
+        self.gasatis.set_label(kurdata['ga']['satis'])
+        self.gadegisim.set_label(kurdata['ga']['degisim'])
+
+        self.caalis.set_label(kurdata['ca']['alis'])
+        self.casatis.set_label(kurdata['ca']['satis'])
+        self.cadegisim.set_label(kurdata['ca']['degisim'])
 
 
     # data box change
     def boxchange(self):
+        if self.page_index >= len(self.pages):
+            self.page_index = 0
+            self.refresh_data()  # the API is called again
+
         # next index
         self.current = (self.current + 1) % len(self.pages)
         name = self.pages[self.current]
         # change the visible box
         self.stack.set_visible_child_name(name)
 
-        if page_index >= len(pages):
-            page_index = 0
-            refresh_data()  # the API is called again
+        self.page_index += 1
         return True
 
     # quit
