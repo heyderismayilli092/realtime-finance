@@ -24,7 +24,7 @@ def kur():
         'usd': usd,
         'eur': eur,
         'ga': ga,
-        'ceyrek': ceyrek
+        'ca': ceyrek
     }
   except Exception as e:
       return e
