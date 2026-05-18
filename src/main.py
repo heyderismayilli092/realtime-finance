@@ -114,19 +114,43 @@ class pardusfinance:
 
         self.usdalis.set_label(kurdata['usd']['alis'])
         self.usdsatis.set_label(kurdata['usd']['satis'])
-        self.usddegisim.set_label(kurdata['usd']['degisim'])
+        # the colors are displayed according to the exchange rate
+        if kurdata['usd']['degisim'][0:1] == "-":
+          markup = "<span foreground='#ff0000'>{val}</span>".format(val=kurdata['usd']['degisim'])
+          self.usddegisim.set_markup(markup)
+        elif kurdata['usd']['degisim'][0:1] == "+":
+          markup = "<span foreground='#12ff34'>{val}</span>".format(val=kurdata['usd']['degisim'])
+          self.usddegisim.set_markup(markup)
 
         self.euroalis.set_label(kurdata['eur']['alis'])
         self.eurosatis.set_label(kurdata['eur']['satis'])
-        self.eurodegisim.set_label(kurdata['eur']['degisim'])
+        # the colors are displayed according to the exchange rate
+        if kurdata['eur']['degisim'][0:1] == "-":
+          markup = "<span foreground='#ff0000'>{val}</span>".format(val=kurdata['eur']['degisim'])
+          self.eurodegisim.set_markup(markup)
+        elif kurdata['eur']['degisim'][0:1] == "+":
+          markup = "<span foreground='#12ff34'>{val}</span>".format(val=kurdata['eur']['degisim'])
+          self.eurodegisim.set_markup(markup)
 
         self.gaalis.set_label(kurdata['ga']['alis'])
         self.gasatis.set_label(kurdata['ga']['satis'])
-        self.gadegisim.set_label(kurdata['ga']['degisim'])
+        # the colors are displayed according to the exchange rate
+        if kurdata['ga']['degisim'][0:1] == "-":
+          markup = "<span foreground='#ff0000'>{val}</span>".format(val=kurdata['ga']['degisim'])
+          self.gadegisim.set_markup(markup)
+        elif kurdata['ga']['degisim'][0:1] == "+":
+          markup = "<span foreground='#12ff34'>{val}</span>".format(val=kurdata['ga']['degisim'])
+          self.gadegisim.set_markup(markup)
 
         self.caalis.set_label(kurdata['ca']['alis'])
         self.casatis.set_label(kurdata['ca']['satis'])
-        self.cadegisim.set_label(kurdata['ca']['degisim'])
+        # the colors are displayed according to the exchange rate
+        if kurdata['ca']['degisim'][0:1] == "-":
+          markup = "<span foreground='#ff0000'>{val}</span>".format(val=kurdata['ca']['degisim'])
+          self.cadegisim.set_markup(markup)
+        elif kurdata['ca']['degisim'][0:1] == "+":
+          markup = "<span foreground='#12ff34'>{val}</span>".format(val=kurdata['ca']['degisim'])
+          self.cadegisim.set_markup(markup)
 
 
     # data box change
