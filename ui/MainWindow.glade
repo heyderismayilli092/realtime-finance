@@ -17,6 +17,7 @@
           <object class="GtkLabel">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
+            <property name="margin-left">11</property>
             <property name="margin-right">195</property>
             <property name="margin-top">14</property>
             <property name="label" translatable="yes">Real-time data:</property>
@@ -50,7 +51,7 @@
                       <object class="GtkLabel">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="margin-bottom">2</property>
+                        <property name="margin-bottom">4</property>
                         <property name="label" translatable="yes">Dollar</property>
                         <attributes>
                           <attribute name="font-desc" value="Sans Bold 10"/>
@@ -66,7 +67,7 @@
                       <object class="GtkLabel" id="usd_alis">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
+                        <property name="label" translatable="yes">Data is being retrieved...</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -78,7 +79,7 @@
                       <object class="GtkLabel" id="usd_satis">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
+                        <property name="label" translatable="yes">Data is being retrieved...</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -90,7 +91,7 @@
                       <object class="GtkLabel" id="usd_degisim">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
+                        <property name="label" translatable="yes">Data is being retrieved...</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -113,6 +114,7 @@
                       <object class="GtkLabel">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
+                        <property name="margin-bottom">4</property>
                         <property name="label" translatable="yes">Euro</property>
                         <attributes>
                           <attribute name="font-desc" value="Sans Bold 10"/>
@@ -128,7 +130,7 @@
                       <object class="GtkLabel" id="euro_alis">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
+                        <property name="label" translatable="yes">Data is being retrieved...</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -140,7 +142,7 @@
                       <object class="GtkLabel" id="euro_satis">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
+                        <property name="label" translatable="yes">Data is being retrieved...</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -152,7 +154,7 @@
                       <object class="GtkLabel" id="euro_degisim">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
+                        <property name="label" translatable="yes">Data is being retrieved...</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -176,6 +178,7 @@
                       <object class="GtkLabel">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
+                        <property name="margin-bottom">5</property>
                         <property name="label" translatable="yes">Quarter gold </property>
                         <attributes>
                           <attribute name="font-desc" value="Sans Bold 10"/>
@@ -191,7 +194,7 @@
                       <object class="GtkLabel" id="ca_alis">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
+                        <property name="label" translatable="yes">Data is being retrieved...</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -203,7 +206,7 @@
                       <object class="GtkLabel" id="ca_satis">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
+                        <property name="label" translatable="yes">Data is being retrieved...</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -215,7 +218,7 @@
                       <object class="GtkLabel" id="ca_degisim">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
+                        <property name="label" translatable="yes">Data is being retrieved...</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -239,6 +242,7 @@
                       <object class="GtkLabel">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
+                        <property name="margin-bottom">4</property>
                         <property name="label" translatable="yes">Gram gold</property>
                         <attributes>
                           <attribute name="font-desc" value="Sans Bold 10"/>
@@ -254,7 +258,7 @@
                       <object class="GtkLabel" id="ga_alis">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
+                        <property name="label" translatable="yes">Data is being retrieved...</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -266,7 +270,7 @@
                       <object class="GtkLabel" id="ga_satis">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
+                        <property name="label" translatable="yes">Data is being retrieved...</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -278,7 +282,7 @@
                       <object class="GtkLabel" id="ga_degisim">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">label</property>
+                        <property name="label" translatable="yes">Data is being retrieved...</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -298,24 +302,59 @@
                 <property name="expand">False</property>
                 <property name="fill">True</property>
                 <property name="padding">6</property>
-                <property name="position">1</property>
+                <property name="position">0</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="closebutton">
-                <property name="label" translatable="yes">Exit</property>
+              <object class="GtkBox" id="buttonbox">
                 <property name="visible">True</property>
-                <property name="can-focus">True</property>
-                <property name="receives-default">True</property>
-                <property name="margin-left">100</property>
-                <property name="margin-right">100</property>
-                <property name="margin-top">58</property>
-                <property name="margin-bottom">1</property>
+                <property name="can-focus">False</property>
+                <property name="margin-left">10</property>
+                <property name="margin-right">10</property>
+                <property name="homogeneous">True</property>
+                <child>
+                  <object class="GtkButton" id="closebutton">
+                    <property name="label" translatable="yes">Exit</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkSeparator">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="aboutbtn">
+                    <property name="label">gtk-about</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                    <property name="use-stock">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">True</property>
-                <property name="position">2</property>
+                <property name="position">1</property>
               </packing>
             </child>
           </object>
