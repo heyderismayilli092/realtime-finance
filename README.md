@@ -24,6 +24,7 @@ gbp buildpackage --git-export-dir=/tmp/build/pardus-finance -us -uc
 
 ![pardus-finance 1](screenshots/pardus-finance-1.png)
 ![pardus-finance 2](screenshots/pardus-finance-2.png)
+![pardus-finance 3](screenshots/pardus-finance-3.png)
 
 
 NOTE: This software was prepared as part of the "Teknofest 2026 Pardus Bug Finding and Suggestion Competition"
