@@ -20,5 +20,11 @@ sudo mk-build-deps -ir
 gbp buildpackage --git-export-dir=/tmp/build/pardus-finance -us -uc
 ```
 
+### **Screenshots**
+
+![pardus-finance 1](screenshots/pardus-finance-1.png)
+![pardus-finance 2](screenshots/pardus-finance-2.png)
+
+
 NOTE: This software was prepared as part of the "Teknofest 2026 Pardus Bug Finding and Suggestion Competition"
 
