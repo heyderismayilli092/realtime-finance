@@ -7,9 +7,16 @@ reqapi = "https://api.genelpara.com/json/?list=doviz,altin&sembol=USD,EUR,GA,C" 
 
 def kur():
   headers  = {"User-Agent": "curl/8.5.0", "Accept": "*/*"}  # to avoid receiving a "403 Forbidden Error" and to prevent the service from mistaking the application for a bot, the request is sent as a curl request
-  response = requests.get(reqapi, headers=headers)  # exchange rate data
-  response.raise_for_status()
-  json_data = response.json()
+
+  try:
+    response = requests.get(reqapi, headers=headers)  # exchange rate data
+    response.raise_for_status()
+    json_data = response.json()
+  except requests.exceptions.ConnectionError:   # it returns 1 if it cannot connect to the service
+    return 1
+  except requests.exceptions.Timeout:  # if the request times out, it will return 2
+    return 2
+
   try:
     if response.status_code != 200:
         return "request invalid"

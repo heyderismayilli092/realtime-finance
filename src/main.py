@@ -26,6 +26,7 @@ class pardusfinance:
         # widget referances
         self.window = self.builder.get_object("mainwindow")  # home window
         self.about_dialog = self.builder.get_object("about_dialog")  # about screen
+        self.connection = self.builder.get_object("connection")
 
         self.close_button = self.builder.get_object("closebtn")  # close button
         self.close_button.set_name("closebtn")  # for CSS
@@ -53,7 +54,7 @@ class pardusfinance:
         self.stack.set_transition_type(Gtk.StackTransitionType.SLIDE_LEFT)
         self.stack.set_transition_duration(1000)  # ms
 
-        self.page_index = 0
+        self.page_index = 5
         self.pages = ["page0", "page1", "page2", "page3"]  # pages displaying exchange rate data
 
         # transparency window
@@ -124,6 +125,11 @@ class pardusfinance:
     # new market data is retrieved and printed to the appropriate objects
     def refresh_data(self):
         kurdata = kur_api.kur()
+        # if it returns 1, it indicates that there is no internet connection; if it returns 2, it indicates that the connection timed out
+        if kurdata == 1:
+          return 1
+        elif kurdata == 2:
+          return 2
 
         self.usdalis.set_label(kurdata['usd']['alis'])
         self.usdsatis.set_label(kurdata['usd']['satis'])
@@ -170,7 +176,18 @@ class pardusfinance:
     def boxchange(self):
         if self.page_index >= len(self.pages):
             self.page_index = 0
-            self.refresh_data()  # the API is called again
+            output = self.refresh_data()  # the API is called again
+            # connection checking flow:
+            # data from the refresh_data() function is received and checked. If it returns 1, it indicates that there is no internet connection; if it returns 2, it indicates that the connection timed out
+            # if either of these error codes is received, the appropriate error message is displayed
+            if output == 1:
+              self.connection.set_label("Could not connect to the API service.\nPlease check your internet connection")
+              self.stack.set_visible_child_name("page4")
+              return False
+            elif output == 2:
+              self.connection.set_label("The connection timed out.\nPlease close and reopen the app to try again")
+              self.stack.set_visible_child_name("page4")
+              return False
 
         # next index
         self.current = (self.current + 1) % len(self.pages)
