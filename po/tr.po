@@ -27,7 +27,7 @@ msgid "Data is being retrieved..."
 msgstr "Veriler alınıyor..."
 
 msgid "Could not connect to the API service.\nPlease check your internet connection"
-msgstr "API servisine bağlanılamadı.\nLütfen internet bağlantınızı kontrol edin"
+msgstr "API hizmetine bağlanılamadı.\nLütfen internet bağlantınızı kontrol ediniz"
 
 msgid "The connection timed out.\nPlease close and reopen the app to try again"
 msgstr "Bağlantı zaman aşımına uğradı.\nLütfen uygulamayı kapatıp tekrar açarak yeniden deneyin"
