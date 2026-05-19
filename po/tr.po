@@ -23,6 +23,15 @@ msgstr "Pardus masaüstü ekranında döviz ve altın kur değişikliklerini gö
 msgid "Real-time data:"
 msgstr "Gerçek zamanlı veri:"
 
+msgid "Data is being retrieved..."
+msgstr "Veriler alınıyor..."
+
+msgid "Could not connect to the API service.\nPlease check your internet connection"
+msgstr "API servisine bağlanılamadı.\nLütfen internet bağlantınızı kontrol edin"
+
+msgid "The connection timed out.\nPlease close and reopen the app to try again"
+msgstr "Bağlantı zaman aşımına uğradı.\nLütfen uygulamayı kapatıp tekrar açarak yeniden deneyin"
+
 msgid "Dollar"
 msgstr "Dolar"
 
