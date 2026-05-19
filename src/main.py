@@ -181,11 +181,11 @@ class pardusfinance:
             # data from the refresh_data() function is received and checked. If it returns 1, it indicates that there is no internet connection; if it returns 2, it indicates that the connection timed out
             # if either of these error codes is received, the appropriate error message is displayed
             if output == 1:
-              self.connection.set_label("Could not connect to the API service.\nPlease check your internet connection")
+              self.connection.set_label(_("Could not connect to the API service.\nPlease check your internet connection"))
               self.stack.set_visible_child_name("page4")
               return False
             elif output == 2:
-              self.connection.set_label("The connection timed out.\nPlease close and reopen the app to try again")
+              self.connection.set_label(_("The connection timed out.\nPlease close and reopen the app to try again"))
               self.stack.set_visible_child_name("page4")
               return False
 
