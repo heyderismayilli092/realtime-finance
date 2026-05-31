@@ -12,13 +12,13 @@ import locale
 from locale import gettext as _
 import kur_api  # the code that retrieves currency data is being imported
 
-locale.bindtextdomain('pardus-finance', '/usr/share/locale')
-locale.textdomain('pardus-finance')
+locale.bindtextdomain('realtime-finance', '/usr/share/locale')
+locale.textdomain('realtime-finance')
 
 GLADE_FILE = os.path.dirname(os.path.abspath(__file__)) + "/../ui/MainWindow.glade"
 
 
-class pardusfinance:
+class realtimefinance:
     def __init__(self):
         self.builder = Gtk.Builder()
         self.builder.add_from_file(GLADE_FILE)
@@ -211,6 +211,6 @@ class pardusfinance:
 
 
 
-app = pardusfinance()
+app = realtimefinance()
 Gtk.main()
 

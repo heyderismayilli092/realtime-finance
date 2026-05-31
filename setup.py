@@ -13,11 +13,11 @@ def create_mo_files():
     for po in os.listdir(podir):
         if po.endswith(".po"):
             os.makedirs("{}/{}/LC_MESSAGES".format(podir, po.split(".po")[0]), exist_ok=True)
-            mo_file = "{}/{}/LC_MESSAGES/{}".format(podir, po.split(".po")[0], "pardus-finance.mo")
+            mo_file = "{}/{}/LC_MESSAGES/{}".format(podir, po.split(".po")[0], "realtime-finance.mo")
             msgfmt_cmd = 'msgfmt {} -o {}'.format(podir + "/" + po, mo_file)
             subprocess.call(msgfmt_cmd, shell=True)
             mo.append(("/usr/share/locale/" + po.split(".po")[0] + "/LC_MESSAGES",
-                       ["po/" + po.split(".po")[0] + "/LC_MESSAGES/pardus-finance.mo"]))
+                       ["po/" + po.split(".po")[0] + "/LC_MESSAGES/realtime-finance.mo"]))
     return mo
 
 
@@ -34,34 +34,34 @@ if os.path.exists(changelog):
     f.close()
 
 data_files = [
-    ("/usr/bin", ["pardus-finance"]),
+    ("/usr/bin", ["realtime-finance"]),
 
     ("/usr/share/applications",
-     ["tr.org.pardus.finance.desktop"]),
+     ["opensf90.realtime-finance.desktop"]),
 
-    ("/usr/share/pardus/pardus-finance/ui",
+    ("/usr/share/realtime-finance/ui",
      ["ui/MainWindow.glade"]),
 
-    ("/usr/share/pardus/pardus-finance/src", ["src/main.py"]),
+    ("/usr/share/realtime-finance/src", ["src/main.py"]),
 
     ("/usr/lib/python3/dist-packages/", ["src/kur_api.py"]),
 
     ("/usr/share/icons/hicolor/scalable/apps/",
-     ["pardus-finance.png"])
+     ["realtime-finance.png"])
 ] + create_mo_files()
 
 setup(
-    name="pardus-finance",
+    name="realtime-finance",
     version=version,
     packages=find_packages(),
-    scripts=["pardus-finance"],
+    scripts=["realtime-finance"],
     install_requires=["PyGObject"],
     data_files=data_files,
     author="Heydar Ismayilli",
     author_email="heyderismayilli092@gmail.com",
-    description="A simple application that displays currency and gold exchange rate changes on the Pardus desktop screen",
+    description="A simple application that displays currency and gold exchange rate changes on the Linux desktop screen",
     license="GPLv3",
-    keywords="pardus-finance, finance, dollar, euro, gold",
-    url="https://github.com/heyderismayilli092/pardus-finance",
+    keywords="realtime-finance, finance, dollar, euro, gold",
+    url="https://github.com/heyderismayilli092/realtime-finance",
 )
 

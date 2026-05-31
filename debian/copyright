@@ -1,7 +1,7 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: pardus-finance
+Upstream-Name: realtime-finance
 Upstream-Contact: Heydar Ismayilli <heyderismayilli092@gmail.com>
-Source: https://github.com/heyderismayilli092/pardus-finance
+Source: https://github.com/heyderismayilli092/realtime-finance
 
 
 Files: *

@@ -5,14 +5,14 @@
   <object class="GtkAboutDialog" id="about_dialog">
     <property name="can-focus">False</property>
     <property name="type-hint">dialog</property>
-    <property name="program-name">Pardus Finance</property>
+    <property name="program-name">Realtime Finance</property>
     <property name="version">0.0.1</property>
     <property name="copyright">© OpenSF90</property>
-    <property name="comments" translatable="yes">A simple application that displays currency and gold exchange rate changes on the Pardus desktop screen</property>
-    <property name="website">https://github.com/heyderismayilli092/pardus-finance</property>
+    <property name="comments" translatable="yes">A simple application that displays currency and gold exchange rate changes on the Linux desktop screen</property>
+    <property name="website">https://github.com/heyderismayilli092/realtime-finance</property>
     <property name="website-label" translatable="yes">Web Page</property>
     <property name="authors">Heydar Ismayilli &lt;heyderismayilli092@gmail.com&gt;</property>
-    <property name="logo">/usr/share/icons/hicolor/scalable/apps/pardus-finance.png</property>
+    <property name="logo">/usr/share/icons/hicolor/scalable/apps/realtime-finance.png</property>
     <property name="license-type">gpl-3-0</property>
     <child internal-child="vbox">
       <object class="GtkBox">
@@ -38,7 +38,7 @@
   </object>
   <object class="GtkWindow" id="mainwindow">
     <property name="can-focus">False</property>
-    <property name="title" translatable="yes">Pardus Finance</property>
+    <property name="title" translatable="yes">Realtime Finance</property>
     <property name="default-width">320</property>
     <property name="default-height">90</property>
     <child>
