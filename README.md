@@ -25,6 +25,8 @@ gbp buildpackage --git-export-dir=/tmp/build/realtime-finance -us -uc
 ![realtime-finance 1](screenshots/realtime-finance-1.png)
 ![realtime-finance 2](screenshots/realtime-finance-2.png)
 ![realtime-finance 3](screenshots/realtime-finance-3.png)
+![realtime-finance 4](screenshots/realtime-finance-4.png)
+![realtime-finance 5](screenshots/realtime-finance-5.png)
 
 
 NOTE: This software was prepared as part of the "Teknofest 2026 Pardus Bug Finding and Suggestion Competition"
